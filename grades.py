@@ -1,19 +1,26 @@
 # grades.py
+def compute_average(scores):
+    return sum(scores) / len(scores)
 
-def calculate_grade(score):
-    if score >= 90:
+def assign_grade(avg):
+    if avg >= 90:
         return "A"
-    elif score >= 80:
+    elif avg >= 80:
         return "B"
-    elif score >= 70:
+    elif avg >= 70:
         return "C"
-    elif score >= 60:
+    elif avg >= 60:
         return "D"
     else:
         return "F"
 
-def get_average(scores):
-    if not scores:
-        return 0
-    return sum(scores) / len(scores)
+def generate_remark(grade):
+    remarks = {
+        "A": "Excellent Performance",
+        "B": "Good Performance",
+        "C": "Satisfactory Performance",
+        "D": "Needs Improvement",
+        "F": "Failing Status"
+    }
+    return remarks.get(grade, "Invalid Grade")
 
